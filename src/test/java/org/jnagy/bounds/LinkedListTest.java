@@ -10,7 +10,6 @@ public class LinkedListTest {
     public void shouldInsertString() {
         String element1 = "element1";
         String element2 = "element2";
-
         LinkedList<String> stringLinkedList = new LinkedList<>();
 
         stringLinkedList.insert(stringLinkedList, element1);
@@ -34,9 +33,9 @@ public class LinkedListTest {
 
     @Test
     public void shouldInsertDog() {
-        Dog dogOne = new Dog("one");
-        Dog dogTwo = new Dog("two");
-        Dog dogThree = new Dog("three");
+        Dog dogOne = new Dog("one", 1);
+        Dog dogTwo = new Dog("two", 2);
+        Dog dogThree = new Dog("three", 3);
 
         LinkedList<Dog> dogLinkedList = new LinkedList<>();
 
@@ -50,9 +49,9 @@ public class LinkedListTest {
 
     @Test
     public void shouldDeleteFirst() {
-        Dog dogOne = new Dog("one");
-        Dog dogTwo = new Dog("two");
-        Dog dogThree = new Dog("three");
+        Dog dogOne = new Dog("one", 1);
+        Dog dogTwo = new Dog("two", 2);
+        Dog dogThree = new Dog("three", 3);
 
         LinkedList<Dog> dogLinkedList = new LinkedList<>();
 
@@ -66,9 +65,9 @@ public class LinkedListTest {
 
     @Test
     public void shouldDeleteLast() {
-        Dog dogOne = new Dog("ome");
-        Dog dogTwo = new Dog("two");
-        Dog dogThree = new Dog("three");
+        Dog dogOne = new Dog("ome", 1);
+        Dog dogTwo = new Dog("two", 2);
+        Dog dogThree = new Dog("three", 3);
 
         LinkedList<Dog> dogLinkedList = new LinkedList<>();
 
@@ -82,9 +81,9 @@ public class LinkedListTest {
 
     @Test
     public void shouldGetNode() {
-        Dog dogOne = new Dog("ome");
-        Dog dogTwo = new Dog("two");
-        Dog dogThree = new Dog("three");
+        Dog dogOne = new Dog("ome", 1);
+        Dog dogTwo = new Dog("two", 2);
+        Dog dogThree = new Dog("three", 3);
 
         LinkedList<Dog> dogLinkedList = new LinkedList<>();
 
@@ -94,8 +93,6 @@ public class LinkedListTest {
 
         assertThat(dogLinkedList.size(), is(3));
         assertThat(dogLinkedList.get(dogLinkedList, dogThree), is(dogThree));
-
     }
-
 
 }

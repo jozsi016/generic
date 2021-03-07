@@ -2,10 +2,11 @@ package org.jnagy.bounds;
 
 import java.util.Objects;
 
-public class Dog extends Animal{
+public class Dog extends Animal {
     String name;
 
-    public Dog(String name) {
+    public Dog(String name, Integer age) {
+        super(age);
         this.name = name;
     }
 
@@ -25,7 +26,6 @@ public class Dog extends Animal{
     public int hashCode() {
         return Objects.hash(name);
     }
-
 
     @Override
     public String toString() {

@@ -1,9 +1,6 @@
 package org.jnagy.bounds;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
-import static java.util.Collections.sort;
 
 public class RepoDog {
 

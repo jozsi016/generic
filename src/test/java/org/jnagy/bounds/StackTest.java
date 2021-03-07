@@ -1,7 +1,6 @@
 package org.jnagy.bounds;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +9,10 @@ import static org.junit.Assert.assertThat;
 
 public class StackTest {
 
-
     @Test
     public void shouldFifo() {
         String element1 = "element1";
         String element2 = "element2";
-
         Stack<String> myStack = new Stack<>();
 
         myStack.push(element1);
@@ -28,7 +25,6 @@ public class StackTest {
     public void shouldFifoForInt() {
         Integer element1 = 1;
         Integer element2 = 2;
-
         Stack<Integer> myStack = new Stack();
 
         myStack.push(element1);
@@ -39,10 +35,9 @@ public class StackTest {
 
     @Test
     public void shouldAnimal() {
-        Dog dog = new Dog("dog");
-        Puli puli = new Puli("puli");
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-
+        Dog dog = new Dog("dog", 1);
+        Puli puli = new Puli("puli", 2);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 3);
         Stack<Animal> myStack = new Stack();
 
         myStack.push(dog);
@@ -54,10 +49,9 @@ public class StackTest {
 
     @Test
     public void shouldAbleToExtendsStackGenreic() {
-        Dog dog = new Dog("dog");
-        Puli puli = new Puli("puli");
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-
+        Dog dog = new Dog("dog", 1);
+        Puli puli = new Puli("puli", 2);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 3);
         Stack<Animal> myStack = new Stack();
 
         myStack.push(dog);
@@ -70,10 +64,9 @@ public class StackTest {
 
     @Test
     public void shouldSupportLowerBound() {
-        Dog dog = new Dog("dog");
-        Puli puli = new Puli("puli");
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-
+        Dog dog = new Dog("dog", 1);
+        Puli puli = new Puli("puli", 2);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 3);
         List<? super Animal> myList = new ArrayList<>();
 
         myList.add(dog);
@@ -82,5 +75,4 @@ public class StackTest {
 
         assertThat((FarkasKutya) myList.get(2), is(farkasKutya));
     }
-
 }

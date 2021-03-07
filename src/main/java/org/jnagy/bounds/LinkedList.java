@@ -41,16 +41,18 @@ public class LinkedList<T> {
         }
         return list;
     }
-   public T get(LinkedList<T> list, T type) {
-       Node<T> currNode = list.head;
-       if (currNode == null) {
-           return null;
-       }
-       while (currNode != null && !currNode.type.equals(type)) {
-           currNode = currNode.next;
-       }
-       return currNode.type;
-   }
+
+    public T get(LinkedList<T> list, T type) {
+        Node<T> currNode = list.head;
+        if (currNode == null) {
+            return null;
+        }
+        while (currNode != null && !currNode.type.equals(type)) {
+            currNode = currNode.next;
+        }
+        return currNode.type;
+    }
+
     public LinkedList<T> deleteLast(LinkedList<T> list) {
         Node<T> currNode = list.head, prev = null;
         if (currNode == null || currNode.next == null) {

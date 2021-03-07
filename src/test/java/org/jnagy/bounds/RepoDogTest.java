@@ -1,7 +1,6 @@
 package org.jnagy.bounds;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,12 +15,9 @@ public class RepoDogTest {
         // given
         RepoDog dogs = new RepoDog();
         List<Dog> dogList = new ArrayList<>();
-        Puli puli = new Puli("puli");
-        puli.setAge(3);
-        Dog bigDog = new Dog("BigDog");
-        bigDog.setAge(5);
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-        farkasKutya.setAge(6);
+        Puli puli = new Puli("puli", 3);
+        Dog bigDog = new Dog("BigDog", 5);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 6);
         dogList.add(puli);
         dogList.add(bigDog);
         dogList.add(farkasKutya);
@@ -37,14 +33,10 @@ public class RepoDogTest {
         // given
         RepoDog dogs = new RepoDog();
         List<Dog> dogList = new ArrayList<>();
-        Puli puli = new Puli("puli");
-        puli.setAge(3);
-        Dog bigDog = new Dog("BigDog");
-        bigDog.setAge(7);
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-        farkasKutya.setAge(8);
-        Puli puli2 = new Puli("puli2");
-        puli2.setAge(5);
+        Puli puli = new Puli("puli", 3);
+        Dog bigDog = new Dog("BigDog", 7);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 8);
+        Puli puli2 = new Puli("puli2", 5);
 
         dogList.add(puli);
         dogList.add(bigDog);
@@ -54,7 +46,7 @@ public class RepoDogTest {
         Collections.sort(dogList);
         dogs.saveAll(dogList);
         //then
-        FarkasKutya actual = new FarkasKutya("farkasKutya");
+        FarkasKutya actual = new FarkasKutya("farkasKutya", 8);
         assertThat(actual, is(dogs.getDogs().get(3)));
         assertThat(actual, is(dogList.get(3)));
     }
@@ -64,14 +56,10 @@ public class RepoDogTest {
         // given
         RepoDog dogs = new RepoDog();
         List<Dog> dogList = new ArrayList<>();
-        Puli puli = new Puli("puli");
-        puli.setAge(3);
-        Dog bigDog = new Dog("BigDog");
-        bigDog.setAge(7);
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-        farkasKutya.setAge(8);
-        Puli puli2 = new Puli("puli2");
-        puli2.setAge(5);
+        Puli puli = new Puli("puli", 3);
+        Dog bigDog = new Dog("BigDog", 7);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 8);
+        Puli puli2 = new Puli("puli2", 5);
 
         dogList.add(puli);
         dogList.add(bigDog);
@@ -81,7 +69,7 @@ public class RepoDogTest {
         Collections.sort(dogList);
         dogs.saveAll(dogList);
         //then
-        FarkasKutya actual = new FarkasKutya("farkasKutya");
+        FarkasKutya actual = new FarkasKutya("farkasKutya", 8);
         assertThat(actual, is(dogs.getDogs().get(3)));
         assertThat(actual, is(dogList.get(3)));
     }
@@ -91,25 +79,20 @@ public class RepoDogTest {
         // given
         RepoDog dogs = new RepoDog();
         List<Dog> dogList = new ArrayList<>();
-        Puli puli = new Puli("puli");
-        puli.setAge(3);
-        Dog bigDog = new Dog("BigDog");
-        bigDog.setAge(7);
-        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya");
-        farkasKutya.setAge(8);
-        Puli puli2 = new Puli("puli2");
-        puli2.setAge(5);
+        Puli puli = new Puli("puli", 3);
+        Dog bigDog = new Dog("BigDog", 7);
+        FarkasKutya farkasKutya = new FarkasKutya("farkasKutya", 8);
+        Puli puli2 = new Puli("puli2", 5);
 
         dogList.add(puli);
         dogList.add(bigDog);
         dogList.add(farkasKutya);
         dogList.add(puli2);
 
-     // when
-     // should be finished    RepoDog.copy(dogList,dogList);
+        // when
         dogs.saveAll(dogList);
         //then
-        FarkasKutya actual = new FarkasKutya("farkasKutya");
+        FarkasKutya actual = new FarkasKutya("farkasKutya", 8);
         assertThat(actual, is(dogs.getDogs().get(3)));
         assertThat(actual, is(dogList.get(3)));
     }
